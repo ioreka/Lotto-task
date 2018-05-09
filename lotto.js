@@ -31,3 +31,16 @@ function randomLottoNumbers() {
   }
   return ticket
 }
+
+function createTickets(nTickets) {
+  let ticketArray = [];
+
+  for(let i = 0; i < nTickets; i++) {
+    ticketArray.push(randomLottoNumbers());
+  }
+  return ticketArray;
+}
+
+var myCash = 6.66;
+var myNumberOfTickets = numberOfTickets(myCash);
+console.log(createTickets(myNumberOfTickets));
