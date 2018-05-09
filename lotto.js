@@ -4,6 +4,30 @@ function numberOfTickets(cash) {
   return Math.floor(cash);
 }
 
-var myCash = 7.58;
-var myTickets = numberOfTickets(myCash);
-console.log(myTickets);
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+function randomLottoNumbers() {
+  let ticket = [];
+  for(let i = 0; i <= 5; i++) {
+
+      let arraySize = ticket.length;
+
+      let check = arraySize;
+
+      while(check === arraySize) {
+        let newNumber = getRandomInt(1, 60)
+        if (ticket.includes(newNumber) === false) {
+          ticket.push(newNumber)
+          check++
+        }
+      }
+
+  }
+  return ticket
+}
